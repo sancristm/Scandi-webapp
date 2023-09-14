@@ -1,0 +1,114 @@
+[
+  {
+    "products": [
+      {
+        "type": "DVD",
+        "SKU": "JVC200120",
+        "Name": "Acme DISC",
+        "price": "$1.00",
+        "size": "700 MB"
+      },
+      {
+        "type": "DVD",
+        "SKU": "JVC200121",
+        "Name": "Acme DISC",
+        "price": "$1.00",
+        "size": "700 MB"
+      },
+      {
+        "type": "DVD",
+        "SKU": "JVC200122",
+        "Name": "Acme DISC",
+        "price": "$1.00",
+        "size": "700 MB"
+      },
+      {
+        "type": "DVD",
+        "SKU": "JVC200123",
+        "Name": "Acme DISC",
+        "price": "$1.00",
+        "size": "700 MB"
+      },
+      {
+        "type": "BOOK",
+        "SKU": "GGWP004",
+        "Name": "War and Peace",
+        "price": "$20.00",
+        "weight": "2KG"
+      },
+      {
+        "type": "BOOK",
+        "SKU": "GGWP005",
+        "Name": "War and Peace",
+        "price": "$20.00",
+        "weight": "2KG"
+      },
+      {
+        "type": "BOOK",
+        "SKU": "GGWP006",
+        "Name": "War and Peace",
+        "price": "$20.00",
+        "weight": "2KG"
+      },
+      {
+        "type": "BOOK",
+        "SKU": "GGWP007",
+        "Name": "War and Peace",
+        "price": "$20.00",
+        "weight": "2KG"
+      },
+      {
+        "type": "FURNITURE",
+        "SKU": "TE12052",
+        "Name": "Chair",
+        "price": "$40.00",
+        "Dimensions": [
+          {
+            "Height": 24,
+            "Width": 45,
+            "Length": 15
+          }
+        ]
+      },
+      {
+        "type": "FURNITURE",
+        "SKU": "TE12053",
+        "Name": "Chair",
+        "price": "$40.00",
+        "Dimensions": [
+          {
+            "Height": 24,
+            "Width": 45,
+            "Length": 15
+          }
+        ]
+      },
+      {
+        "type": "FURNITURE",
+        "SKU": "TE12054",
+        "Name": "Chair",
+        "price": "$40.00",
+        "Dimensions": [
+          {
+            "Height": 24,
+            "Width": 45,
+            "Length": 15
+          }
+        ]
+      },
+      {
+        "type": "FURNITURE",
+        "SKU": "TE12055",
+        "Name": "Chair",
+        "price": "$40.00",
+        "Dimensions": [
+          {
+            "Height": 24,
+            "Width": 45,
+            "Length": 15
+          }
+        ]
+      }
+    ]
+  }
+]
