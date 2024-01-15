@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { useAddProductMutation } from "../slices/productApiSlice";
-import { setProduct } from "../slices/productSlice";
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAddProductMutation } from '../slices/productApiSlice';
+import { setProduct } from '../slices/productSlice';
 
 function AddProduct({ onAdd, children }) {
-  const [SKU, setSku] = useState("");
-  const [Name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [productType, setProductType] = useState("DVD");
-  const [size, setSize] = useState("");
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [width, setWidth] = useState("");
-  const [length, setLength] = useState("");
+  const [SKU, setSku] = useState('');
+  const [Name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [productType, setProductType] = useState('DVD');
+  const [size, setSize] = useState('');
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
+  const [width, setWidth] = useState('');
+  const [length, setLength] = useState('');
   const [dimensions, setDimensions] = useState({
-    height: "",
-    width: "",
-    length: "",
+    height: '',
+    width: '',
+    length: '',
   });
 
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function AddProduct({ onAdd, children }) {
 
   useEffect(() => {
     if (productDetails) {
-      navigate("/");
+      navigate('/');
     }
   }, [navigate, productDetails]);
 
@@ -37,133 +37,114 @@ function AddProduct({ onAdd, children }) {
     try {
       const res = await addProduct().unwrap();
       dispatch(setProduct({ ...res }));
-      navigate("/");
+      navigate('/');
     } catch (err) {
       console.log(err?.data?.message || err.error);
     }
-
-    // if (!SKU) {
-    //   alert("Please add a product");
-    //   return;
-    // }
-
-    // setSku("");
-    // setName("");
-    // setPrice("");
-    // setProductType("DVD");
-    // setSize("");
-    // setWeight("");
-    // setHeight("");
-    // setWidth("");
-    // setLength("");
-    // setDimensions({ height: "", width: "", length: "" });
-
-    // reset the form
-    event.target.reset();
   };
 
   return (
-    <div className="container">
-      <form id="product_form" onSubmit={handleSubmit}>
-        <div className="form-control">
+    <div className='container'>
+      <form id='product_form' onSubmit={handleSubmit}>
+        <div className='form-control'>
           <div>
-            <label htmlFor="sku">SKU:</label>
+            <label htmlFor='sku'>SKU:</label>
             <input
-              type="text"
-              id="sku"
-              name="sku"
+              type='text'
+              id='sku'
+              name='sku'
               value={SKU}
               required
               onChange={(event) => setSku(event.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="name">Name:</label>
+            <label htmlFor='name'>Name:</label>
             <input
-              type="text"
-              id="name"
-              name="name"
+              type='text'
+              id='name'
+              name='name'
               value={Name}
               required
               onChange={(event) => setName(event.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="price">Price:</label>
+            <label htmlFor='price'>Price:</label>
             <input
-              type="number"
-              id="price"
-              name="price"
+              type='number'
+              id='price'
+              name='price'
               value={price}
               required
               onChange={(event) => setPrice(event.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="productType">Product Type:</label>
+            <label htmlFor='productType'>Product Type:</label>
             <select
-              id="productType"
-              name="productType"
+              id='productType'
+              name='productType'
               value={productType}
               onChange={(event) => setProductType(event.target.value)}
             >
-              <option value="DVD">DVD</option>
-              <option value="BOOK">Book</option>
-              <option value="FURNITURE">Furniture</option>
+              <option value='DVD'>DVD</option>
+              <option value='BOOK'>Book</option>
+              <option value='FURNITURE'>Furniture</option>
             </select>
           </div>
-          {productType === "DVD" && (
+          {productType === 'DVD' && (
             <div>
-              <label htmlFor="size">Size (MB):</label>
+              <label htmlFor='size'>Size (MB):</label>
               <input
-                type="number"
-                id="size"
-                name="size"
+                type='number'
+                id='size'
+                name='size'
                 value={size}
                 required
                 onChange={(event) => setSize(event.target.value)}
               />
             </div>
           )}
-          {productType === "BOOK" && (
+          {productType === 'BOOK' && (
             <div>
-              <label htmlFor="weight">Weight (Kg):</label>
+              <label htmlFor='weight'>Weight (Kg):</label>
               <input
-                type="number"
-                id="weight"
-                name="weight"
+                type='number'
+                id='weight'
+                name='weight'
                 value={weight}
                 required
                 onChange={(event) => setWeight(event.target.value)}
               />
             </div>
           )}
-          {productType === "FURNITURE" && (
+          {productType === 'FURNITURE' && (
             <div>
-              <label htmlFor="height">Height (cm):</label>
+              <label htmlFor='height'>Height (cm):</label>
               <input
-                type="number"
-                id="height"
-                name="height"
+                type='number'
+                id='height'
+                name='height'
                 value={height}
                 required
                 onChange={(event) => setHeight(event.target.value)}
               />
-              <label htmlFor="width">Width (cm):</label>
+              <label htmlFor='width'>Width (cm):</label>
               <input
-                type="number"
-                id="width"
-                name="width"
+                type='number'
+                id='width'
+                name='width'
                 required
                 value={width}
                 onChange={(event) => setWidth(event.target.value)}
               />
 
-              <label htmlFor="length">Length (cm):</label>
+              <label htmlFor='length'>Length (cm):</label>
               <input
-                type="number"
-                id="length"
-                name="length"
+                type='number'
+                id='length'
+                name='length'
                 required
                 value={length}
                 onChange={(event) => setLength(event.target.value)}
